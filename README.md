@@ -1,3 +1,3 @@
-# Hotel Zenf — Sistema demonstrativo v3
-
-Demo local para apresentação comercial. Dados são salvos no navegador via localStorage. Não utilizar como produção antes da implantação do banco, autenticação e segurança.
+Hotel Zenf — Sistema Essencial v4
+Demo comercial estática. Dados persistidos em localStorage.
+Inclui quartos por categoria/quantidade/diária, reserva com cadastro de hóspede, valor automático, estacionamento e financeiro básico.

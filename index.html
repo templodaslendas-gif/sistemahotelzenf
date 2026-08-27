@@ -3,27 +3,33 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="theme-color" content="#0b0c0a">
+  <meta name="theme-color" content="#f3f0e9">
   <title>Hotel Zenf | Gestão</title>
   <link rel="icon" href="assets/favicon.ico">
   <link rel="stylesheet" href="app.css">
 </head>
 <body>
   <div class="scrim" id="scrim"></div>
+
   <aside id="sidebar">
-    <a class="app-brand" href="index.html">
-      <img src="assets/hotel-zenf-emblem.png" alt="Hotel Zenf">
-      <div><strong>Hotel Zenf</strong><span>Gestão</span></div>
-    </a>
+    <div class="app-brand">
+      <div class="brand-emblem"><img src="assets/hotel-zenf-emblem.png" alt="Símbolo Hotel Zenf"></div>
+      <div><strong>Hotel Zenf</strong><span>Gestão hoteleira</span></div>
+    </div>
+
     <nav>
-      <button class="active" data-view="dashboard">Visão geral</button>
-      <button data-view="reservas">Reservas</button>
-      <button data-view="hospedes">Hóspedes</button>
-      <button data-view="quartos">Quartos</button>
-      <button data-view="estacionamento">Estacionamento</button>
-      <button data-view="financeiro">Financeiro</button>
+      <button class="active" data-view="dashboard"><span>⌂</span> Visão geral</button>
+      <button data-view="reservas"><span>▣</span> Reservas</button>
+      <button data-view="hospedes"><span>◇</span> Hóspedes</button>
+      <button data-view="quartos"><span>□</span> Quartos</button>
+      <button data-view="estacionamento"><span>◉</span> Estacionamento</button>
+      <button data-view="financeiro"><span>R$</span> Financeiro</button>
     </nav>
-    <a class="back" href="index.html">← Voltar ao site</a>
+
+    <div class="sidebar-foot">
+      <small>HOTEL ZENF</small>
+      <span>Operação simples para a recepção.</span>
+    </div>
   </aside>
 
   <header class="mobile-head">
@@ -41,48 +47,77 @@
     <section id="dashboard" class="view active">
       <div class="stats" id="dashboardStats"></div>
       <div class="dashboard-grid">
-        <div class="panel">
-          <div class="panel-head"><h2>Movimentações de hoje</h2><span id="todayLabel"></span></div>
+        <div class="panel premium-panel">
+          <div class="panel-head"><div><small>HOJE</small><h2>Movimentações</h2></div><span id="todayLabel"></span></div>
           <div class="timeline" id="todayTimeline"></div>
         </div>
-        <div class="panel">
-          <div class="panel-head"><h2>Veículos hospedados</h2><button class="link-btn" data-go="estacionamento">Ver todos</button></div>
+        <div class="panel premium-panel">
+          <div class="panel-head"><div><small>ESTACIONAMENTO</small><h2>Veículos hospedados</h2></div><button class="link-btn" data-go="estacionamento">Ver todos</button></div>
           <div id="parkingMini" class="mini-list"></div>
         </div>
       </div>
     </section>
 
     <section id="reservas" class="view">
-      <div class="panel">
-        <div class="panel-head responsive-head"><div><h2>Reservas</h2><span>Entrada, saída, quarto e hóspede em um só lugar.</span></div><button class="gold small" id="addReservation">+ Nova reserva</button></div>
-        <div class="table-wrap"><table><thead><tr><th>Hóspede</th><th>Quarto</th><th>Entrada</th><th>Saída</th><th>Veículo</th><th>Status</th><th></th></tr></thead><tbody id="reservationsTable"></tbody></table></div>
+      <div class="panel premium-panel">
+        <div class="panel-head responsive-head">
+          <div><small>OPERAÇÃO</small><h2>Reservas</h2><span>Hóspede, quarto, período e valor em um único fluxo.</span></div>
+          <button class="gold small" id="addReservation">+ Nova reserva</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Hóspede</th><th>Quarto</th><th>Entrada</th><th>Saída</th><th>Valor</th><th>Veículo</th><th>Status</th><th></th></tr></thead>
+            <tbody id="reservationsTable"></tbody>
+          </table>
+        </div>
       </div>
     </section>
 
     <section id="hospedes" class="view">
-      <div class="panel">
-        <div class="panel-head responsive-head"><div><h2>Hóspedes</h2><span>Cadastro simples para facilitar reservas futuras.</span></div><button class="gold small" id="addGuest">+ Cadastrar hóspede</button></div>
+      <div class="panel premium-panel">
+        <div class="panel-head responsive-head">
+          <div><small>CADASTROS</small><h2>Hóspedes</h2><span>Cadastro simples para agilizar futuras reservas.</span></div>
+          <button class="gold small" id="addGuest">+ Cadastrar hóspede</button>
+        </div>
         <div class="cards" id="guestCards"></div>
       </div>
     </section>
 
     <section id="quartos" class="view">
-      <div class="panel">
-        <div class="panel-head"><div><h2>Quartos</h2><span>Status atual dos quartos da demonstração.</span></div></div>
+      <div class="panel premium-panel">
+        <div class="panel-head responsive-head">
+          <div><small>ESTRUTURA</small><h2>Quartos</h2><span>Defina quantos quartos existem de cada categoria e o valor da diária.</span></div>
+          <button class="gold small" id="manageRooms">Configurar quartos</button>
+        </div>
+        <div class="room-type-grid" id="roomTypeCards"></div>
+        <div class="section-divider"></div>
+        <div class="panel-head"><div><small>UNIDADES</small><h2>Quartos cadastrados</h2><span>Esses são os quartos que aparecem na criação da reserva.</span></div></div>
         <div class="room-grid" id="roomCards"></div>
       </div>
     </section>
 
     <section id="estacionamento" class="view">
-      <div class="panel">
-        <div class="panel-head responsive-head"><div><h2>Estacionamento</h2><span>Veículo vinculado ao hóspede e ao quarto.</span></div><button class="gold small" id="addVehicle">+ Registrar veículo</button></div>
+      <div class="panel premium-panel">
+        <div class="panel-head responsive-head">
+          <div><small>CONTROLE</small><h2>Estacionamento</h2><span>Modelo, cor e placa sempre vinculados ao hóspede e ao quarto.</span></div>
+          <button class="gold small" id="addVehicle">+ Registrar veículo</button>
+        </div>
         <div class="parking-grid" id="parkingCards"></div>
       </div>
     </section>
 
     <section id="financeiro" class="view">
       <div class="stats" id="financeStats"></div>
-      <div class="panel simple-note"><h2>Financeiro básico</h2><p>Nesta fase, o sistema mostra somente o essencial: valor da hospedagem, total previsto, recebido e pendente. Recursos avançados ficam para uma próxima atualização.</p></div>
+      <div class="panel premium-panel">
+        <div class="panel-head"><div><small>RESUMO</small><h2>Financeiro básico</h2></div></div>
+        <p class="finance-copy">Toda reserva salva entra automaticamente no valor previsto. Valores recebidos podem ser informados na própria reserva. Recursos avançados ficam para uma etapa futura.</p>
+        <div class="table-wrap">
+          <table>
+            <thead><tr><th>Hóspede</th><th>Quarto</th><th>Período</th><th>Total</th><th>Recebido</th><th>Pendente</th></tr></thead>
+            <tbody id="financeTable"></tbody>
+          </table>
+        </div>
+      </div>
     </section>
   </main>
 
@@ -92,13 +127,28 @@
       <small>NOVA RESERVA</small><h2>Registrar hospedagem</h2>
       <form id="reservationForm">
         <div class="form-grid">
-          <label>Hóspede<select id="reservationGuest" required></select></label>
-          <label>Quarto<select id="reservationRoom" required></select></label>
+          <label>Hóspede
+            <select id="reservationGuest" required></select>
+            <button class="inline-action" type="button" id="guestFromReservation">+ Cadastrar novo hóspede</button>
+          </label>
+          <label>Quarto
+            <select id="reservationRoom" required></select>
+            <span class="field-help" id="roomRateHelp">Selecione um quarto disponível.</span>
+          </label>
           <label>Entrada<input id="checkIn" type="date" required></label>
           <label>Saída<input id="checkOut" type="date" required></label>
-          <label>Valor da hospedagem<input id="reservationValue" type="number" min="0" step="0.01" placeholder="0,00"></label>
-          <label>Status<select id="reservationStatus"><option>Confirmada</option><option>Hospedado</option><option>Finalizada</option><option>Cancelada</option></select></label>
+          <label>Valor da hospedagem
+            <div class="money-input"><span>R$</span><input id="reservationValue" type="number" min="0" step="0.01" placeholder="0,00"></div>
+            <span class="field-help">Calculado automaticamente pela diária × número de noites.</span>
+          </label>
+          <label>Valor recebido
+            <div class="money-input"><span>R$</span><input id="reservationPaid" type="number" min="0" step="0.01" value="0"></div>
+          </label>
+          <label>Status
+            <select id="reservationStatus"><option>Confirmada</option><option>Hospedado</option><option>Finalizada</option><option>Cancelada</option></select>
+          </label>
         </div>
+
         <div class="vehicle-box">
           <label class="checkline"><input id="hasVehicle" type="checkbox"> Hóspede está com veículo</label>
           <div class="form-grid vehicle-fields" id="vehicleFields">
@@ -122,6 +172,18 @@
         <label>Documento <span class="optional">opcional</span><input id="guestDocument" placeholder="CPF / documento"></label>
         <label>Observação <span class="optional">opcional</span><textarea id="guestNote" rows="3" placeholder="Informação útil para a recepção"></textarea></label>
         <button class="gold full" type="submit">Salvar hóspede</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="roomsModal" aria-hidden="true">
+    <div class="modal-card wide">
+      <button class="close" data-close="roomsModal">×</button>
+      <small>QUARTOS</small><h2>Configurar categorias</h2>
+      <p class="modal-intro">Informe a quantidade de quartos de cada categoria e o valor da diária. O sistema cria ou remove unidades automaticamente para a demonstração.</p>
+      <form id="roomConfigForm">
+        <div id="roomConfigRows" class="room-config-list"></div>
+        <button class="gold full" type="submit">Salvar configuração</button>
       </form>
     </div>
   </div>
