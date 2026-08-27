@@ -1,3 +1,9 @@
-Hotel Zenf — Sistema Essencial v4
+Hotel Zenf — Sistema Essencial v5
 Demo comercial estática. Dados persistidos em localStorage.
-Inclui quartos por categoria/quantidade/diária, reserva com cadastro de hóspede, valor automático, estacionamento e financeiro básico.
+
+Atualizações desta versão:
+- Ícones/emoji intuitivos no menu lateral.
+- Rodapé alterado para "Produzido por FFR Technology".
+- WhatsApp da FFR adicionado ao rodapé.
+- Removido o slogan anterior do rodapé.
+- Mantidas as funções de quartos, reservas, hóspedes, estacionamento e financeiro.

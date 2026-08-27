@@ -20,12 +20,14 @@ aside{position:fixed;left:0;top:0;bottom:0;width:252px;background:linear-gradien
 .app-brand span{font-size:10px;color:#aaa69b;margin-top:3px}
 aside nav{display:flex;flex-direction:column;gap:6px}
 aside nav button{border:0;background:transparent;color:#c5c0b5;text-align:left;padding:13px 14px;border-radius:12px;display:flex;align-items:center;gap:11px;transition:.2s}
-aside nav button span{width:24px;color:#d7b875;font-size:12px}
+aside nav button span{width:26px;display:inline-flex;align-items:center;justify-content:center;color:#d7b875;font-size:17px;line-height:1}
 aside nav button:hover{background:rgba(255,255,255,.055);color:#fff}
 aside nav button.active{background:linear-gradient(90deg,rgba(217,187,120,.16),rgba(255,255,255,.045));color:#fff;box-shadow:inset 3px 0 0 var(--gold2)}
 .sidebar-foot{margin-top:auto;padding:18px 10px 4px;border-top:1px solid rgba(255,255,255,.08)}
-.sidebar-foot small{display:block;color:var(--gold2);letter-spacing:.18em;font-size:9px}
-.sidebar-foot span{display:block;color:#827f77;font-size:10px;line-height:1.5;margin-top:5px}
+.sidebar-foot small{display:block;color:var(--gold2);letter-spacing:.18em;font-size:8px}
+.sidebar-foot strong{display:block;color:#fff;font-family:'Playfair Display',Georgia,serif;font-size:14px;margin-top:6px}
+.ffr-whatsapp{display:inline-flex;align-items:center;gap:6px;margin-top:9px;color:#bdb8ae;text-decoration:none;font-size:10px;transition:.2s}
+.ffr-whatsapp:hover{color:#fff}
 .mobile-head{display:none}
 main{margin-left:252px;padding:36px;min-height:100vh}
 .top{display:flex;justify-content:space-between;align-items:center;margin-bottom:28px}
