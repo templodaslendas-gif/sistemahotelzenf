@@ -26,7 +26,7 @@ aside nav button.active{background:linear-gradient(90deg,rgba(217,187,120,.16),r
 .sidebar-foot{margin-top:auto;padding:18px 10px 4px;border-top:1px solid rgba(255,255,255,.08)}
 .sidebar-foot small{display:block;color:var(--gold2);letter-spacing:.18em;font-size:8px}
 .sidebar-foot strong{display:block;color:#fff;font-family:'Playfair Display',Georgia,serif;font-size:14px;margin-top:6px}
-.ffr-whatsapp{display:inline-flex;align-items:center;gap:6px;margin-top:9px;color:#bdb8ae;text-decoration:none;font-size:10px;transition:.2s}
+
 .ffr-whatsapp:hover{color:#fff}
 .mobile-head{display:none}
 main{margin-left:252px;padding:36px;min-height:100vh}
@@ -127,3 +127,10 @@ textarea{resize:vertical}
   .room-config-row>div:first-child{grid-column:1/-1}
 }
 @media(max-width:390px){.stats{grid-template-columns:1fr}.top{gap:12px}.top h1{font-size:29px}.top .gold{font-size:10px}.panel{padding:17px}}
+
+
+
+
+.ffr-brand-link{display:inline-block;margin-top:6px;text-decoration:none;transition:opacity .2s ease,transform .2s ease}
+.ffr-brand-link strong{color:#fff;font-family:'Playfair Display',Georgia,serif;font-size:14px}
+.ffr-brand-link:hover{opacity:.85;transform:translateY(-1px)}
